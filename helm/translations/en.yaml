@@ -39,6 +39,12 @@ configuration:
   calendar_urls:
     name: Calendars (private iCal addresses)
     description: "Optional. Google Calendar > Settings > your calendar > Integrate calendar > 'Secret address in iCal format'. Several: separated by spaces. Read-only. Steps in the Documentation tab, section Calendar."
+  google_client_id:
+    name: Google client ID (Google Tasks)
+    description: "Optional. From your own Google Cloud project (APIs & Services > Credentials > OAuth client ID, type Web application). Ends with .apps.googleusercontent.com. Steps in the Documentation tab, section Google Tasks."
+  google_client_secret:
+    name: Google client secret
+    description: "Optional. Shown next to the client ID. Helm asks Google for read-only access to your tasks, and only after you press Connect in Settings > Google."
   heartbeat_url:
     name: Still-alive signal (healthchecks.io)
     description: "Optional. The ping address of a healthchecks.io check. Helm opens it every 5 minutes; when it stops, healthchecks.io alerts you. Steps in the Documentation tab."

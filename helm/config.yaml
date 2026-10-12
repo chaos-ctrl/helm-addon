@@ -1,6 +1,6 @@
 # Helm for Home Assistant (ready-made image). See DOCS.md next to this file.
 name: "Helm"
-version: "0.22.0"
+version: "0.23.0"
 slug: helm
 image: "ghcr.io/chaos-ctrl/helm-addon-{arch}"
 description: "Private, self-hosted life hub: one front door for work, health, people and admin"
@@ -38,6 +38,8 @@ options:
   ai_report_repo: ""
   heartbeat_url: ""
   calendar_urls: ""
+  google_client_id: ""
+  google_client_secret: ""
 schema:
   timezone: str
   tailscale_hostname: str
@@ -56,3 +58,5 @@ schema:
   ai_report_repo: str?
   heartbeat_url: str?
   calendar_urls: password?
+  google_client_id: str?
+  google_client_secret: password?

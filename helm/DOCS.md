@@ -226,6 +226,30 @@ No Google sign-in is needed: each calendar has a private address.
 Keep these addresses private: anyone who has one can read that calendar. If one leaks, Google's same screen has
 **Reset**. Helm reads them at most every 15 minutes. Adding events from Helm will come later (switched off).
 
+## Google Tasks
+
+Helm can show your Google Tasks (due soon, overdue, or added lately) as cards, and all of them on a 📋 Google Tasks page.
+It only **reads** them (it asks Google for read-only access). You make your own Google "OAuth client" once, so no
+company sits between Helm and Google. Takes about 10 minutes, on the computer:
+
+1. Open https://console.cloud.google.com and sign in with your Google account. Top left: **Select a project** >
+   **New project** > name it `Helm` > **Create**, then select it.
+2. Search bar: **Google Tasks API** > **Enable**.
+3. Menu ☰ > **APIs & Services** > **OAuth consent screen** (may be called **Google Auth Platform**) > **Get started**:
+   app name `Helm`, your email for support and contact, audience **External** > **Create**.
+4. **Audience** > **Publish app** > **Confirm** (otherwise Google stops Helm's access after 7 days; nothing is made
+   public: only accounts you sign in with can use it).
+5. **Clients** (or Credentials) > **Create client** > type **Web application**, name `Helm`. Under **Authorized redirect
+   URIs** > **Add URI**: your Helm address followed by `/api/google/callback` (Helm shows the exact line in
+   Settings > Google). **Create**.
+6. Copy the **Client ID** and **Client secret** into Home Assistant > Settings > Add-ons > Helm > **Configuration**
+   (`google_client_id`, `google_client_secret`) > **Save** > **Restart**.
+7. In Helm: ⚙ Settings > **Google** > **Connect Google** > choose your account. Google warns "Google hasn't verified
+   this app" (it's your own app): **Advanced** > **Go to Helm** > tick the access > **Continue**.
+
+Disconnect any time in Settings > Google (Helm also tells Google to cancel its access). Backup copies that leave the
+machine never contain the Google key.
+
 ## Your board and Help
 
 **🧭 Board** (button on Home, and a card every morning from 07:00): your advisers say what matters today (three
