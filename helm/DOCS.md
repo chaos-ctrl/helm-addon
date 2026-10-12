@@ -220,7 +220,8 @@ the options, what could go wrong, the chair's recommendation and one next step).
 it went on the day you chose. From 20:00, **Close the day with the board**: what you did (kept as your daily log),
 what went well, what carries over, tomorrow's first step (then Tend's evening check-in). On Job search, **🪑 Ask the
 board** on a job gives the board its details, and each application ready to send has an **📨 application kit**
-(the posting, the CV and letter PDFs to upload, the prepared answers with Copy buttons). The board uses Claude Sonnet when the Anthropic key is set (Settings > AI > "Your
+(the posting, the CV and letter PDFs to upload, the prepared answers with Copy buttons). **🧪 Career paths**
+(Work) suggests new directions from your profile, each with a small first experiment. The board uses Claude Sonnet when the Anthropic key is set (Settings > AI > "Your
 board"), otherwise the default model.
 
 **? Help** (top bar): frequent questions, the words Helm uses, and a helper that answers from this documentation.
