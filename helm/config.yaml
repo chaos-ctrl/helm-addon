@@ -1,6 +1,6 @@
 # Helm for Home Assistant (ready-made image). See DOCS.md next to this file.
 name: "Helm"
-version: "0.23.0"
+version: "0.23.1"
 slug: helm
 image: "ghcr.io/chaos-ctrl/helm-addon-{arch}"
 description: "Private, self-hosted life hub: one front door for work, health, people and admin"

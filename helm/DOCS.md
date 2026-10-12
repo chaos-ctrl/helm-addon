@@ -238,7 +238,8 @@ company sits between Helm and Google. Takes about 10 minutes, on the computer:
 3. Menu ☰ > **APIs & Services** > **OAuth consent screen** (may be called **Google Auth Platform**) > **Get started**:
    app name `Helm`, your email for support and contact, audience **External** > **Create**.
 4. **Audience** > **Publish app** > **Confirm** (otherwise Google stops Helm's access after 7 days; nothing is made
-   public: only accounts you sign in with can use it).
+   public: only accounts you sign in with can use it). If the button is greyed out: under **Test users** > **Add users**,
+   add your own Google address instead, and press Connect again in Helm every 7 days.
 5. **Clients** (or Credentials) > **Create client** > type **Web application**, name `Helm`. Under **Authorized redirect
    URIs** > **Add URI**: your Helm address followed by `/api/google/callback` (Helm shows the exact line in
    Settings > Google). **Create**.
