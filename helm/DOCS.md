@@ -212,6 +212,20 @@ opens Home (for now: to-do lists for the To-dos module), then deleted. A file He
 about you", where you can also read and change it); Helm takes it in when the owner next opens the board, then
 deletes the file.
 
+## Calendar
+
+Helm reads your calendars (read-only) to show a 📅 Calendar page and to let your board plan around your appointments.
+No Google sign-in is needed: each calendar has a private address.
+
+1. On a computer, open https://calendar.google.com > the gear (top right) > **Settings**.
+2. On the left, under **Settings for my calendars**, click your calendar.
+3. Scroll to **Integrate calendar** and copy **Secret address in iCal format** (ends with `basic.ics`).
+4. Home Assistant > Settings > Add-ons > **Helm** > **Configuration** > **calendar_urls**: paste it. Several calendars:
+   paste their addresses separated by a space. **Save**, then **Restart**.
+
+Keep these addresses private: anyone who has one can read that calendar. If one leaks, Google's same screen has
+**Reset**. Helm reads them at most every 15 minutes. Adding events from Helm will come later (switched off).
+
 ## Your board and Help
 
 **🧭 Board** (button on Home, and a card every morning from 07:00): your advisers say what matters today (three

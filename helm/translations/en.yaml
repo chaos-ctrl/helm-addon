@@ -36,6 +36,9 @@ configuration:
   job_agent_write_token:
     name: GitHub write key (job agent only)
     description: "Optional. A second fine-grained token, Contents: read and write, on the job agent's repository only. Lets Done / Let it go on job cards go back to the agent. Steps in the Documentation tab."
+  calendar_urls:
+    name: Calendars (private iCal addresses)
+    description: "Optional. Google Calendar > Settings > your calendar > Integrate calendar > 'Secret address in iCal format'. Several: separated by spaces. Read-only. Steps in the Documentation tab, section Calendar."
   heartbeat_url:
     name: Still-alive signal (healthchecks.io)
     description: "Optional. The ping address of a healthchecks.io check. Helm opens it every 5 minutes; when it stops, healthchecks.io alerts you. Steps in the Documentation tab."
