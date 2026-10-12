@@ -1,0 +1,50 @@
+# The labels and help texts Home Assistant shows on the add-on's Configuration tab.
+configuration:
+  timezone:
+    name: Time zone
+    description: "Your time zone, for example Europe/Paris. Reminders and check-ins use it."
+  tailscale_hostname:
+    name: Tailscale name
+    description: "Helm's name on your Tailscale network. Leave it as helm: the address becomes https://helm.<your-tailnet>.ts.net"
+  tailscale_auth_key:
+    name: Tailscale auth key
+    description: "Needed once, for the first start (Tailscale admin console > Settings > Keys > Generate auth key). You can empty it afterwards."
+  allow_home_network:
+    name: Allow the home network (emergency only)
+    description: "Off = Helm opens only through Tailscale. Turn on only if Tailscale is broken, and turn it off again afterwards."
+  alerts_to_this_address:
+    name: Send security alerts to
+    description: "The address that receives alerts (new device, wrong passwords...). Usually your personal Gmail."
+  alerts_from_this_gmail:
+    name: Send alerts from (Gmail address)
+    description: "A separate Gmail account used only for sending, so your personal account's details are never stored in Helm."
+  alerts_from_gmail_app_password:
+    name: App password of that sending account
+    description: "16 letters from myaccount.google.com/apppasswords, made while signed in to the SENDING account (not your normal password)."
+  openrouter_api_key:
+    name: OpenRouter key (MiMo, everyday AI)
+    description: "From openrouter.ai/keys. Used for most AI help. Optional."
+  anthropic_api_key:
+    name: Anthropic key (Claude Sonnet, work tasks)
+    description: "From console.anthropic.com/settings/keys. Used for cards in the Work space. Optional."
+  github_read_token:
+    name: GitHub read-only key (job agent)
+    description: "A fine-grained GitHub token with Contents: read-only on the job agent's repository only. Steps in the Documentation tab, section Job agent."
+  job_agent_repo:
+    name: Job agent repository
+    description: "owner/name of the job agent's GitHub repository."
+  job_agent_write_token:
+    name: GitHub write key (job agent only)
+    description: "Optional. A second fine-grained token, Contents: read and write, on the job agent's repository only. Lets Done / Let it go on job cards go back to the agent. Steps in the Documentation tab."
+  heartbeat_url:
+    name: Still-alive signal (healthchecks.io)
+    description: "Optional. The ping address of a healthchecks.io check. Helm opens it every 5 minutes; when it stops, healthchecks.io alerts you. Steps in the Documentation tab."
+  my_people_repo:
+    name: My People data repository
+    description: "owner/name of My People's private data repository (empty = no People cards)."
+  my_people_write_token:
+    name: GitHub write key (My People only)
+    description: "Optional. A fine-grained token, Contents: read and write, on My People's data repository only. Lets Helm save what you tell it about people (you confirm every change). Steps in the Documentation tab, section My People."
+  ai_report_repo:
+    name: AI-model report repository
+    description: "owner/name of the repository that writes the weekly AI-model report (data/panel.json). Read with the read-only key. Empty = no report card."

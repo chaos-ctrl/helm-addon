@@ -1,0 +1,56 @@
+# Helm for Home Assistant (ready-made image). See DOCS.md next to this file.
+name: "Helm"
+version: "0.14.0"
+slug: helm
+image: "ghcr.io/chaos-ctrl/helm-addon-{arch}"
+description: "Private, self-hosted life hub: one front door for work, health, people and admin"
+url: "https://github.com/chaos-ctrl/helm-addon"
+arch:
+  - amd64
+startup: application
+boot: auto
+init: false
+# Stop Helm for a moment while Home Assistant makes its backup, so the database copy is always consistent.
+backup: cold
+# No port is opened on the home network: Helm is reached through its own Tailscale address only.
+# (To allow the home network for a while, switch on allow_home_network AND add a port under Network.)
+ports:
+  8790/tcp: null
+ports_description:
+  8790/tcp: "Helm (only if allow_home_network is on)"
+map:
+  - share:rw
+options:
+  timezone: "Europe/Paris"
+  tailscale_hostname: "helm"
+  tailscale_auth_key: ""
+  allow_home_network: false
+  alerts_to_this_address: ""
+  alerts_from_this_gmail: ""
+  alerts_from_gmail_app_password: ""
+  openrouter_api_key: ""
+  anthropic_api_key: ""
+  github_read_token: ""
+  job_agent_repo: ""
+  job_agent_write_token: ""
+  my_people_repo: ""
+  my_people_write_token: ""
+  ai_report_repo: ""
+  heartbeat_url: ""
+schema:
+  timezone: str
+  tailscale_hostname: str
+  tailscale_auth_key: password?
+  allow_home_network: bool
+  alerts_to_this_address: str?
+  alerts_from_this_gmail: str?
+  alerts_from_gmail_app_password: password?
+  openrouter_api_key: password?
+  anthropic_api_key: password?
+  github_read_token: password?
+  job_agent_repo: str?
+  job_agent_write_token: password?
+  my_people_repo: str?
+  my_people_write_token: password?
+  ai_report_repo: str?
+  heartbeat_url: str?
