@@ -86,6 +86,19 @@ The list: https://openrouter.ai/api/v1/endpoints/zdr. Helm > Settings > AI > **A
 
 Every AI request is listed in Settings > Activity (what for, which model; never the content).
 
+**Your own AI service (optional, no lock-in):** any service that speaks the OpenAI format works too: OpenAI, Gemini
+(`https://generativelanguage.googleapis.com/v1beta/openai`), or one running at home such as Ollama
+(`http://homeassistant.local:11434/v1`). In the add-on Configuration fill **Your own AI service, address** (and the
+**key**, which a service at home usually doesn't need), Save, Restart; then in Helm > Settings > AI choose
+"Your own AI service" in "Add a model" and type the model's name (for example `llama3.1:8b`).
+
+**Passkeys:** Settings > Account and security > Passkeys > "Add a passkey on this device" lets you sign in with your
+fingerprint, face or screen lock. It needs Helm's secure address (the Tailscale one, `https://...ts.net`). Your password and
+authenticator code always still work.
+
+**Notes from Google Keep:** on your PC run `python tools/keep_to_cleanup.py <the Takeout's Keep folder> <the helm-import
+folder>`; the notes then appear, one at a time, on the reminders clean-up page.
+
 ## Job agent
 
 The **Jobs** cards (Work space) come from the job agent's own repository on GitHub: applications ready to

@@ -27,6 +27,15 @@ configuration:
   anthropic_api_key:
     name: Anthropic key (Claude Sonnet, work tasks)
     description: "From console.anthropic.com/settings/keys. Used for cards in the Work space. Optional."
+  own_ai_address:
+    name: Your own AI service, address (optional)
+    description: "Any service that speaks the OpenAI format: OpenAI (https://api.openai.com/v1), Gemini (https://generativelanguage.googleapis.com/v1beta/openai), or one at home such as Ollama (http://homeassistant.local:11434/v1). Then add its models in Helm > Settings > AI."
+  own_ai_key:
+    name: Your own AI service, key (optional)
+    description: "The key of that service. Leave empty for one at home that needs none."
+  own_ai_name:
+    name: Your own AI service, name (optional)
+    description: "A short name shown in error messages, e.g. Ollama."
   github_read_token:
     name: GitHub read-only key (job agent)
     description: "A fine-grained GitHub token with Contents: read-only on the job agent's repository only. Steps in the Documentation tab, section Job agent."

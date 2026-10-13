@@ -1,6 +1,6 @@
 # Helm for Home Assistant (ready-made image). See DOCS.md next to this file.
 name: "Helm"
-version: "0.41.0"
+version: "0.42.0"
 slug: helm
 image: "ghcr.io/chaos-ctrl/helm-addon-{arch}"
 description: "Private, self-hosted life hub: one front door for work, health, people and admin"
@@ -30,6 +30,9 @@ options:
   alerts_from_gmail_app_password: ""
   openrouter_api_key: ""
   anthropic_api_key: ""
+  own_ai_address: ""
+  own_ai_key: ""
+  own_ai_name: ""
   github_read_token: ""
   job_agent_repo: ""
   job_agent_write_token: ""
@@ -50,6 +53,9 @@ schema:
   alerts_from_gmail_app_password: password?
   openrouter_api_key: password?
   anthropic_api_key: password?
+  own_ai_address: str?
+  own_ai_key: password?
+  own_ai_name: str?
   github_read_token: password?
   job_agent_repo: str?
   job_agent_write_token: password?
