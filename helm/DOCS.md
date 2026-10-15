@@ -163,11 +163,19 @@ the **🤖 AI models** page, read with the same read-only key:
 3. **Update**. Nothing to change in Helm: **ai_report_repo** already says `chaos-ctrl/ai-workbench`, and the card
    appears within the hour (after the first Monday report).
 
-## Cards from your other apps
+## Health, Money and People (inside Helm)
 
-Apps that run on their own (the wealth tracker and Tend) leave their cards in `\\homeassistant.local\share\helm-feeds`
-(one file per app). Helm shows them under "From your apps", and tells the app when you press Done.
-Tend's cards (evening check-in, gym day, take it easy, Monday review) land in the Me space and open Tend.
+Three apps that used to run on their own now live inside Helm, behind Helm's own sign-in:
+- **🌱 Health** (was Tend): sleep, mood, workouts, habit tiles, insights, the gym coach and the private medication log. Page: Me > Health
+  (`#/health/today`). Its server is part of Helm (address `/health/api/...`) and its data is in Helm's data folder (`tend/`). Connect Google Health under
+  Health > More > Connections (the redirect address to register at Google is shown there).
+- **🏦 Money details** (was the wealth tracker): net worth, advice, spending, loans. Page: Life > Money details (`/money/`). Its files are in Helm's data
+  folder (`money/config` and `money/data`). To link another person to their own money, add `helm_users: [their Helm username]` to their entry under `owners` in `money/config/config.yaml`.
+- **👥 People** (was My People): the Everyone page and its tools (WhatsApp import, phone contacts, data check, backup zip). The data stays as plain files in your private
+  My People repository (see "My People" above).
+
+Cards from Health and Money reach Helm through the share (`\\homeassistant.local\share\helm-feeds`, one file per app) and show under "From your apps". Health's
+cards (evening check-in, gym day, take it easy, Monday review) land in the Me space and open Health.
 
 ## Still-alive alert (healthchecks.io)
 
