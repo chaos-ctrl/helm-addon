@@ -57,6 +57,15 @@ configuration:
   heartbeat_url:
     name: Still-alive signal (healthchecks.io)
     description: "Optional. The ping address of a healthchecks.io check. Helm opens it every 5 minutes; when it stops, healthchecks.io alerts you. Steps in the Documentation tab."
+  job_alerts_mailbox_address:
+    name: Job-alert mailbox (address)
+    description: "Optional. A SEPARATE mailbox (not your main one) that receives your forwarded job-alert emails (LinkedIn, Welcome to the Jungle, APEC...). Helm reads it read-only and never changes or sends anything."
+  job_alerts_mailbox_app_password:
+    name: Job-alert mailbox (app password)
+    description: "The app password of that mailbox (Gmail: an app password; your normal password does not work)."
+  job_alerts_mailbox_imap_host:
+    name: Job-alert mailbox (IMAP server)
+    description: "Default imap.gmail.com."
   my_people_repo:
     name: My People data repository
     description: "Optional. Leave empty: People are kept inside Helm. Only fill in to read and write a GitHub repository of people files instead (owner/name)."
