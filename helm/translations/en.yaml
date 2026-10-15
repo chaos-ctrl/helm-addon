@@ -60,6 +60,9 @@ configuration:
   my_people_repo:
     name: My People data repository
     description: "Optional. Leave empty: People are kept inside Helm. Only fill in to read and write a GitHub repository of people files instead (owner/name)."
+  my_people_sync:
+    name: Sync People with a GitHub repository
+    description: "Off (the default): People are kept inside Helm. Switch on only to read and write the repository named above instead."
   my_people_write_token:
     name: GitHub write key (My People only)
     description: "Optional. A fine-grained token, Contents: read and write, on My People's data repository only. Lets Helm save what you tell it about people (you confirm every change). Steps in the Documentation tab, section My People."

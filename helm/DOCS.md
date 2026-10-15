@@ -138,9 +138,9 @@ Helm's nightly backup and in **Settings > Your data, in plain files** (`people/`
 
 - **Bring people in from elsewhere:** Everyone > **⋯ > Import people (zip)**: a zip with `people/<name>.md` files (and `settings.yml`). People you already have are kept.
 - **Take them out again:** Everyone > ⋯ > **Download a backup (.zip)** gives the same kind of zip.
-- **Optional, for people who keep their data in a GitHub repository:** put the repository name (`owner/name`) in the add-on option **my_people_repo**, a read key in
+- **Optional, for people who keep their data in a GitHub repository:** put the repository name (`owner/name`) in the add-on option **my_people_repo**, switch **my_people_sync** on, a read key in
   **github_read_token** and, to save changes, a write key in **my_people_write_token** (Contents: read and write on that repository only). Helm then reads and
-  writes that repository instead of its own copy. Leave **my_people_repo** empty to keep everything in Helm.
+  writes that repository instead of its own copy. Leave **my_people_sync** off to keep everything in Helm (the default).
 
 ## AI-model report
 
