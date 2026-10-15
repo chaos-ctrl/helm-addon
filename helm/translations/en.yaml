@@ -59,7 +59,7 @@ configuration:
     description: "Optional. The ping address of a healthchecks.io check. Helm opens it every 5 minutes; when it stops, healthchecks.io alerts you. Steps in the Documentation tab."
   my_people_repo:
     name: My People data repository
-    description: "owner/name of My People's private data repository (empty = no People cards)."
+    description: "Optional. Leave empty: People are kept inside Helm. Only fill in to read and write a GitHub repository of people files instead (owner/name)."
   my_people_write_token:
     name: GitHub write key (My People only)
     description: "Optional. A fine-grained token, Contents: read and write, on My People's data repository only. Lets Helm save what you tell it about people (you confirm every change). Steps in the Documentation tab, section My People."

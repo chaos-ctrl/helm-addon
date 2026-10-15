@@ -130,27 +130,17 @@ only write to the job agent, where Helm only ever adds small answer files.
 
 Later connectors reuse the same key: edit the token on GitHub and add their repository (below).
 
-## My People
+## People
 
-The **People** cards (who to reach out to, birthdays and anniversaries in the next week, "ask how it went")
-come from My People's data repository, read with the same key. Once My People is set up:
+**People** is part of Helm: who to reach out to, birthdays and anniversaries, "ask how it went", and the **Everyone** page where you add and change people,
+log a contact, log a group, import a WhatsApp chat or phone contacts. The data lives inside Helm (one Markdown file per person in Helm's own database), is in
+Helm's nightly backup and in **Settings > Your data, in plain files** (`people/` in the zip). Nothing else is needed: no GitHub, no key.
 
-1. Open https://github.com/settings/personal-access-tokens, click **Helm (read only)**, then **Edit**.
-2. **Repository access** > **Only select repositories**: add **my-people-data** (keep job-search-agent).
-3. **Update**. Nothing to change in Helm: it picks it up within the hour.
-
-**Saving what you tell Helm** (People page > "Tell Helm about people": type or dictate who you saw, what they
-said, gift ideas, new people...). Helm shows every change and saves only what you tick. To save, it needs a
-separate key that may write to My People's data only:
-
-1. Open https://github.com/settings/personal-access-tokens/new
-2. **Token name**: `Helm (My People, write)`. **Expiration**: 1 year.
-3. **Repository access**: **Only select repositories** > **my-people-data** (only this one).
-4. **Permissions** > **Repository permissions** > **Contents**: **Read and write**. Nothing else.
-5. **Generate token**, copy it, paste it into **my_people_write_token** in this add-on's Configuration,
-   **Save**, **Restart**.
-
-Helm never overwrites a file that changed in My People meanwhile: it says so and reads it again.
+- **Bring people in from elsewhere:** Everyone > **⋯ > Import people (zip)**: a zip with `people/<name>.md` files (and `settings.yml`). People you already have are kept.
+- **Take them out again:** Everyone > ⋯ > **Download a backup (.zip)** gives the same kind of zip.
+- **Optional, for people who keep their data in a GitHub repository:** put the repository name (`owner/name`) in the add-on option **my_people_repo**, a read key in
+  **github_read_token** and, to save changes, a write key in **my_people_write_token** (Contents: read and write on that repository only). Helm then reads and
+  writes that repository instead of its own copy. Leave **my_people_repo** empty to keep everything in Helm.
 
 ## AI-model report
 
@@ -171,8 +161,8 @@ Three apps that used to run on their own now live inside Helm, behind Helm's own
   Health > More > Connections (the redirect address to register at Google is shown there).
 - **🏦 Money details** (was the wealth tracker): net worth, advice, spending, loans. Page: Life > Money details (`/money/`). Its files are in Helm's data
   folder (`money/config` and `money/data`). To link another person to their own money, add `helm_users: [their Helm username]` to their entry under `owners` in `money/config/config.yaml`.
-- **👥 People** (was My People): the Everyone page and its tools (WhatsApp import, phone contacts, data check, backup zip). The data stays as plain files in your private
-  My People repository (see "My People" above).
+- **👥 People** (was My People): the Everyone page and its tools (WhatsApp import, phone contacts, data check, backup zip). The data lives in Helm
+  (see "People" above).
 
 Cards from Health and Money reach Helm through the share (`\\homeassistant.local\share\helm-feeds`, one file per app) and show under "From your apps". Health's
 cards (evening check-in, gym day, take it easy, Monday review) land in the Me space and open Health.
