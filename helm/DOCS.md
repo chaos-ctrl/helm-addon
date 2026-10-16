@@ -144,14 +144,14 @@ Helm's nightly backup and in **Settings > Your data, in plain files** (`people/`
 
 ## AI-model report
 
-Every Monday at 08:30 a separate repository (**ai-workbench**) writes a short report: the best-value AI model for
-each use, new models worth knowing, and what to switch in your apps. Helm shows it as a card in **Life** and on
-the **🤖 AI models** page, read with the same read-only key:
+Helm makes this report itself, with nothing to set up. Every week it compares OpenRouter's public list of AI models
+that keep no data with last week's copy and with the models you use: new models, price changes, a model that lost
+its no-data hosts, and the cheapest options. It shows the result as a card in **Life** and on the **🤖 AI models**
+page. It compares prices and availability only; it cannot judge quality, and it says so.
 
-1. Open https://github.com/settings/personal-access-tokens, click **Helm (read only)**, then **Edit**.
-2. **Repository access** > **Only select repositories**: add **ai-workbench** (keep the others).
-3. **Update**. Nothing to change in Helm: **ai_report_repo** already says `chaos-ctrl/ai-workbench`, and the card
-   appears within the hour (after the first Monday report).
+Optional, for someone who runs a separate report repository: put its name (`owner/name`) in **ai_report_repo** and
+give Helm's read-only key access to it. Helm then shows that repository's `data/panel.json` instead. Leave
+**ai_report_repo** empty to use Helm's own report (the default).
 
 ## Health, Money and People (inside Helm)
 
