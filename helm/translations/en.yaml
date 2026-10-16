@@ -75,6 +75,3 @@ configuration:
   my_people_write_token:
     name: GitHub write key (My People only)
     description: "Optional. A fine-grained token, Contents: read and write, on My People's data repository only. Lets Helm save what you tell it about people (you confirm every change). Steps in the Documentation tab, section My People."
-  ai_report_repo:
-    name: AI-model report repository
-    description: "owner/name of the repository that writes the weekly AI-model report (data/panel.json). Read with the read-only key. Empty (the default) = Helm makes its own weekly report from OpenRouter's public list."

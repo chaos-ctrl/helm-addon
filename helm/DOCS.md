@@ -156,17 +156,6 @@ Helm's nightly backup and in **Settings > Your data, in plain files** (`people/`
   **github_read_token** and, to save changes, a write key in **my_people_write_token** (Contents: read and write on that repository only). Helm then reads and
   writes that repository instead of its own copy. Leave **my_people_sync** off to keep everything in Helm (the default).
 
-## AI-model report
-
-Helm makes this report itself, with nothing to set up. Every week it compares OpenRouter's public list of AI models
-that keep no data with last week's copy and with the models you use: new models, price changes, a model that lost
-its no-data hosts, and the cheapest options. It shows the result as a card in **Life** and on the **🤖 AI models**
-page. It compares prices and availability only; it cannot judge quality, and it says so.
-
-Optional, for someone who runs a separate report repository: put its name (`owner/name`) in **ai_report_repo** and
-give Helm's read-only key access to it. Helm then shows that repository's `data/panel.json` instead. Leave
-**ai_report_repo** empty to use Helm's own report (the default).
-
 ## Health, Money and People (inside Helm)
 
 Three apps that used to run on their own now live inside Helm, behind Helm's own sign-in:
