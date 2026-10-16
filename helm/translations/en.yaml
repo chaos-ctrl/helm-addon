@@ -66,6 +66,18 @@ configuration:
   job_alerts_mailbox_imap_host:
     name: Job-alert mailbox (IMAP server)
     description: "Default imap.gmail.com."
+  forward_to_helm_mailbox_address:
+    name: Forward to Helm mailbox (address)
+    description: "Optional. Another SEPARATE mailbox (not your main one, not the job-alert one). Forward any email there from your own address and it lands in Helm's ＋ inbox, with a deadline if the email has one. Read-only: Helm never changes or sends anything. Steps in the Documentation tab."
+  forward_to_helm_mailbox_app_password:
+    name: Forward to Helm mailbox (app password)
+    description: "The app password of that mailbox (Gmail: an app password; your normal password does not work)."
+  forward_to_helm_mailbox_imap_host:
+    name: Forward to Helm mailbox (IMAP server)
+    description: "Default imap.gmail.com."
+  forward_to_helm_allowed_senders:
+    name: Forward to Helm (who may forward)
+    description: "Optional. The addresses whose forwards Helm takes in, separated by commas. Empty = only the alerts address above (your own). Anything from anyone else is ignored."
   my_people_repo:
     name: My People data repository
     description: "Optional. Leave empty: People are kept inside Helm. Only fill in to read and write a GitHub repository of people files instead (owner/name)."

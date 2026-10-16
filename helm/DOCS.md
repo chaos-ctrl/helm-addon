@@ -240,6 +240,29 @@ No Google sign-in is needed: each calendar has a private address.
 Keep these addresses private: anyone who has one can read that calendar. If one leaks, Google's same screen has
 **Reset**. Helm reads them at most every 15 minutes. Adding events from Helm will come later (switched off).
 
+## Forward an email to Helm (optional)
+
+Forward any email (a letter from an office, a bill, an invitation) to a mailbox only Helm reads, and it lands in Helm's
+**＋ inbox** with the email's subject, its first lines and a deadline when the email names one ("by 30 October", "avant le
+30/10"). Sorted as a to-do, the deadline becomes its due date. Helm reads that mailbox **read-only** (nothing is marked as
+read, moved or sent) every 15 minutes, and only takes emails **sent from your own address** (the alerts address above,
+or the addresses in **forward_to_helm_allowed_senders**): anything from anyone else is ignored.
+
+1. Create a **new Gmail account** just for this (a name like "yourname helm inbox"). Don't use your main one, and
+   don't use the job-alert mailbox.
+2. Signed in to that new account (a private window: Ctrl+Shift+N): https://myaccount.google.com > **Security** >
+   **2-Step Verification** > switch it on.
+3. https://myaccount.google.com/apppasswords > App name **Helm forward** > **Create**: copy the 16 letters.
+4. Gmail of the new account > the gear > **See all settings** > **Forwarding and POP/IMAP** > **IMAP access: Enable IMAP** >
+   **Save changes**.
+5. Home Assistant > Settings > Add-ons > **Helm** > **Configuration**:
+   - **forward_to_helm_mailbox_address**: the new address.
+   - **forward_to_helm_mailbox_app_password**: the 16 letters.
+   **Save**, then **Restart**.
+6. From your usual mailbox, forward an email to the new address. Within 15 minutes it is in Helm's ＋ inbox.
+
+Tip: in your usual Gmail, add the new address as a contact named "Helm", so forwarding is "Forward > Helm".
+
 ## Google Tasks
 
 Helm can show your Google Tasks (due soon, overdue, or added lately) as cards, and all of them on a 📋 Google Tasks page.
