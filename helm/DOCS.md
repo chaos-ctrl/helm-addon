@@ -130,6 +130,20 @@ only write to the job agent, where Helm only ever adds small answer files.
 
 Later connectors reuse the same key: edit the token on GitHub and add their repository (below).
 
+**Without the agent** (Job search > "Move my job search into Helm", or a new Helm), Helm keeps the job list
+itself: company career sites, an optional alert mailbox, scoring, documents. Two pages more, reached from
+the links at the bottom of Job search:
+
+- **📡 Launch radar** (for jobs in pharma or biotech; off until switched on in **What I'm looking for >
+  Launch radar**): once a week Helm reads the European Medicines Agency's public list of medicines and
+  shows the companies that got a new medicine approved or recommended in the last 60 days (they usually
+  hire their medical team around the launch, often before advertising), plus biotechs that raised money
+  (from the news feeds you list). Watch / Approached / Not for me on each, and ✍️ Approach drafts a first
+  message (Helm sends nothing). A Helm moved from the agent copies the agent's radar and salary benchmarks
+  once by itself.
+- **📈 Job market**: matching jobs per week, the trend (after 8 weeks of history), who is hiring and where
+  the matches come from, all from Helm's own list.
+
 ## People
 
 **People** is part of Helm: who to reach out to, birthdays and anniversaries, "ask how it went", and the **Everyone** page where you add and change people,
