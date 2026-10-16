@@ -246,7 +246,9 @@ Forward any email (a letter from an office, a bill, an invitation) to a mailbox 
 **＋ inbox** with the email's subject, its first lines and a deadline when the email names one ("by 30 October", "avant le
 30/10"). Sorted as a to-do, the deadline becomes its due date. Helm reads that mailbox **read-only** (nothing is marked as
 read, moved or sent) every 15 minutes, and only takes emails **sent from your own address** (the alerts address above,
-or the addresses in **forward_to_helm_allowed_senders**): anything from anyone else is ignored.
+or the addresses in **forward_to_helm_allowed_senders**), and only when the mailbox's own server confirms that the email
+really comes from that address (its DMARC / DKIM / SPF check passed: a "From" line alone can be faked). Anything else is ignored.
+Forward by hand: an automatic forwarding filter keeps the original sender, so Helm ignores those.
 
 1. Create a **new Gmail account** just for this (a name like "yourname helm inbox"). Don't use your main one, and
    don't use the job-alert mailbox.
