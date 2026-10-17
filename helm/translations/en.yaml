@@ -36,15 +36,6 @@ configuration:
   own_ai_name:
     name: Your own AI service, name (optional)
     description: "A short name shown in error messages, e.g. Ollama."
-  github_read_token:
-    name: GitHub read-only key (job agent)
-    description: "A fine-grained GitHub token with Contents: read-only on the job agent's repository only. Steps in the Documentation tab, section Job agent."
-  job_agent_repo:
-    name: Job agent repository
-    description: "owner/name of the job agent's GitHub repository."
-  job_agent_write_token:
-    name: GitHub write key (job agent only)
-    description: "Optional. A second fine-grained token, Contents: read and write, on the job agent's repository only. Lets Done / Let it go on job cards go back to the agent. Steps in the Documentation tab."
   calendar_urls:
     name: Calendars (private iCal addresses)
     description: "Optional. Google Calendar > Settings > your calendar > Integrate calendar > 'Secret address in iCal format'. Several: separated by spaces. Read-only. Steps in the Documentation tab, section Calendar."
@@ -78,12 +69,3 @@ configuration:
   forward_to_helm_allowed_senders:
     name: Forward to Helm (who may forward)
     description: "Optional. The addresses whose forwards Helm takes in, separated by commas. Empty = only the alerts address above (your own). Anything from anyone else is ignored."
-  my_people_repo:
-    name: My People data repository
-    description: "Optional. Leave empty: People are kept inside Helm. Only fill in to read and write a GitHub repository of people files instead (owner/name)."
-  my_people_sync:
-    name: Sync People with a GitHub repository
-    description: "Off (the default): People are kept inside Helm. Switch on only to read and write the repository named above instead."
-  my_people_write_token:
-    name: GitHub write key (My People only)
-    description: "Optional. A fine-grained token, Contents: read and write, on My People's data repository only. Lets Helm save what you tell it about people (you confirm every change). Steps in the Documentation tab, section My People."

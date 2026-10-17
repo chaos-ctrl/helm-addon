@@ -1,6 +1,6 @@
 # Helm for Home Assistant (ready-made image). See DOCS.md next to this file.
 name: "Helm"
-version: "0.100.0"
+version: "0.101.0"
 slug: helm
 image: "ghcr.io/chaos-ctrl/helm-addon-{arch}"
 description: "Private, self-hosted life hub: one front door for work, health, people and admin"
@@ -33,9 +33,6 @@ options:
   own_ai_address: ""
   own_ai_key: ""
   own_ai_name: ""
-  github_read_token: ""
-  job_agent_repo: ""
-  job_agent_write_token: ""
   job_alerts_mailbox_address: ""
   job_alerts_mailbox_app_password: ""
   job_alerts_mailbox_imap_host: "imap.gmail.com"
@@ -43,9 +40,6 @@ options:
   forward_to_helm_mailbox_app_password: ""
   forward_to_helm_mailbox_imap_host: "imap.gmail.com"
   forward_to_helm_allowed_senders: ""
-  my_people_repo: ""
-  my_people_sync: false
-  my_people_write_token: ""
   heartbeat_url: ""
   calendar_urls: ""
   google_client_id: ""
@@ -63,9 +57,6 @@ schema:
   own_ai_address: str?
   own_ai_key: password?
   own_ai_name: str?
-  github_read_token: password?
-  job_agent_repo: str?
-  job_agent_write_token: password?
   job_alerts_mailbox_address: str?
   job_alerts_mailbox_app_password: password?
   job_alerts_mailbox_imap_host: str?
@@ -73,9 +64,6 @@ schema:
   forward_to_helm_mailbox_app_password: password?
   forward_to_helm_mailbox_imap_host: str?
   forward_to_helm_allowed_senders: str?
-  my_people_repo: str?
-  my_people_sync: bool?
-  my_people_write_token: password?
   heartbeat_url: str?
   calendar_urls: password?
   google_client_id: str?

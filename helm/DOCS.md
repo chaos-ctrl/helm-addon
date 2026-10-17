@@ -99,48 +99,20 @@ authenticator code always still work.
 **Notes from Google Keep:** on your PC run `python tools/keep_to_cleanup.py <the Takeout's Keep folder> <the helm-import
 folder>`; the notes then appear, one at a time, on the reminders clean-up page.
 
-## Job agent
+## Job search
 
-The **Jobs** cards (Work space) come from the job agent's own repository on GitHub: applications ready to
-send, drafts waiting in Gmail, interviews, the agent's questions and its to-do list. Helm reads them with a
-key that can only **read** that one repository.
-
-1. On a computer, open https://github.com/settings/personal-access-tokens/new (sign in to GitHub if asked).
-2. **Token name**: `Helm (read only)`. **Expiration**: 1 year (Helm shows a card when it stops working).
-3. **Repository access**: **Only select repositories** > pick **job-search-agent**.
-4. **Permissions** > **Repository permissions** > **Contents**: **Read-only**. Leave everything else as it is.
-5. **Generate token**, then copy it (starts with `github_pat_`); GitHub shows it only once.
-6. In this add-on's **Configuration**: paste it into **github_read_token**, check **job_agent_repo** says
-   `chaos-ctrl/job-search-agent`, **Save**, then **Restart** (Info tab).
-7. Open Helm's Home: the job cards appear within a minute (Helm checks for changes every 15 minutes).
-
-**Telling the agent "applied" / "skip"** (replaces the agent's old phone panel). With this second key,
-Done on an "Apply:" card marks the job applied, Let it go marks it skipped (the agent applies them within
-the hour); Done on one of its questions accepts the proposed answer; Done on one of its to-dos ticks it.
-
-1. Open https://github.com/settings/personal-access-tokens/new again.
-2. **Token name**: `Helm (job agent, write)`. **Expiration**: 1 year.
-3. **Repository access**: **Only select repositories** > **job-search-agent** (only this one).
-4. **Permissions** > **Repository permissions** > **Contents**: **Read and write**. Nothing else.
-5. **Generate token**, copy it, paste it into **job_agent_write_token** in this add-on's Configuration,
-   **Save**, **Restart**.
-
-It's a separate key on purpose: the read-only one can see more repositories but change nothing; this one can
-only write to the job agent, where Helm only ever adds small answer files.
-
-Later connectors reuse the same key: edit the token on GitHub and add their repository (below).
-
-**Without the agent** (Job search > "Move my job search into Helm", or a new Helm), Helm keeps the job list
-itself: company career sites, an optional alert mailbox, scoring, documents. Two pages more, reached from
-the links at the bottom of Job search:
+**Job search** (Work space) is part of Helm: the job list, applications ready to send with their kit (posting, CV and letter PDFs,
+prepared answers), interviews, follow-ups, replies, recruiters. Helm finds jobs on the company career sites you list and, optionally,
+in an alert mailbox (add-on options **job_alerts_mailbox_...**), scores them and writes the documents. **Import job files** at the bottom
+of Job search takes a zip of job files or one CSV (format: docs/JOBS-FORMAT.md in the source). Two pages more, reached from the links
+at the bottom of Job search:
 
 - **📡 Launch radar** (for jobs in pharma or biotech; off until switched on in **What I'm looking for >
   Launch radar**): once a week Helm reads the European Medicines Agency's public list of medicines and
   shows the companies that got a new medicine approved or recommended in the last 60 days (they usually
   hire their medical team around the launch, often before advertising), plus biotechs that raised money
   (from the news feeds you list). Watch / Approached / Not for me on each, and ✍️ Approach drafts a first
-  message (Helm sends nothing). A Helm moved from the agent copies the agent's radar and salary benchmarks
-  once by itself.
+  message (Helm sends nothing).
 - **📈 Job market**: matching jobs per week, the trend (after 8 weeks of history), who is hiring and where
   the matches come from, all from Helm's own list.
 
@@ -152,9 +124,6 @@ Helm's nightly backup and in **Settings > Your data, in plain files** (`people/`
 
 - **Bring people in from elsewhere:** Everyone > **⋯ > Import people (zip)**: a zip with `people/<name>.md` files (and `settings.yml`). People you already have are kept.
 - **Take them out again:** Everyone > ⋯ > **Download a backup (.zip)** gives the same kind of zip.
-- **Optional, for people who keep their data in a GitHub repository:** put the repository name (`owner/name`) in the add-on option **my_people_repo**, switch **my_people_sync** on, a read key in
-  **github_read_token** and, to save changes, a write key in **my_people_write_token** (Contents: read and write on that repository only). Helm then reads and
-  writes that repository instead of its own copy. Leave **my_people_sync** off to keep everything in Helm (the default).
 
 ## Health, Money and People (inside Helm)
 
