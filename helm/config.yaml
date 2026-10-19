@@ -1,6 +1,6 @@
 # Helm for Home Assistant (ready-made image). See DOCS.md next to this file.
 name: "Helm"
-version: "0.109.0"
+version: "0.110.0"
 slug: helm
 image: "ghcr.io/chaos-ctrl/helm-addon-{arch}"
 description: "Private, self-hosted life hub: one front door for work, health, people and admin"
@@ -20,6 +20,8 @@ ports_description:
   8790/tcp: "Helm (only if allow_home_network is on)"
 map:
   - share:rw
+# Read a sensor a chore names (a plant's soil moisture, helm_core/homeassistant.py): read only, one entity at a time.
+homeassistant_api: true
 options:
   timezone: "Europe/Paris"
   tailscale_hostname: "helm"
